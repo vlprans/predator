@@ -3,7 +3,7 @@
 namespace __server_namespace{
     server::server():m_ClientThreads(DefCliNum)
 {
-    
+
 }
 
 server::server(const sockaddr_storage &SrvAddr)
@@ -20,13 +20,13 @@ server::server(const sockaddr_storage &SrvAddr)
     errcode=pthread_attr_setdetachstate(&attr,PTHREAD_CREATE_DETACHED);
     if(!errcode){
 	errcode=pthread_create(&m_MainThread,&attr,LaunchServer,this);
-	if(errcode) 
+	if(errcode)
 	    throw ServException(L"pthread_create()",errcode);
     }
     pthread_attr_destroy(&attr);
     if(errcode)
 	throw ServException(L"pthread_attr_setdetachstate()",errcode);
-    
+
 }
 server::~server()
 {
@@ -44,4 +44,3 @@ void* server::LaunchServer(void *arg)
 
 
 }//__server_namespace
-x
