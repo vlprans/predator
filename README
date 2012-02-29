@@ -1,0 +1,9 @@
+Predator is a so-called "active sniffer" which hijacks LAN connections using ARP
+spoofing technique. It uses libnet to forge packets and libpcap to capture
+network traffic.
+
+This project was developed by me when I've studied C++ and network programming
+back to 2006 and it is here mainly for historical purposes. This code smells in
+many places. And I'm not sure it will even build :)
+
+Copyright © 2006 Vlad Pranskevichus
